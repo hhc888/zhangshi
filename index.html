@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+	</body>
+	<style type="text/css">
+			*{
+				/*border: 1px solid black;*/
+				margin: 0;
+				padding: 0;
+			}
+	</style>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("<div></div>").appendTo($("body"));
+		$("<ul></ul>").appendTo($("div"));
+		$("<li><img src='img/01.jpg'/></li>").appendTo($("ul"));
+		$("<li><img src='img/02.jpg'/></li>").appendTo($("ul"));
+		$("<li><img src='img/03.jpg'/></li>").appendTo($("ul"));
+		$("<li><img src='img/04.jpg'/></li>").appendTo($("ul"));
+		$("<li><img src='img/05.jpg'/></li>").appendTo($("ul"));
+		$("div").css({
+			"width":"360px",
+			"border":"1px solid black",
+			"margin":"100px auto",
+			"padding-top":"360px"
+		});
+		$("ul").css({
+			"list-style":"none",
+			"height":"70px",
+			"border-top":"1px solid black"
+			});
+		$("li").css("float","left");
+		$("div").css({
+			"background-image":"url(img/01big.jpg)",
+			"background-repeat":"no-repeat"
+		});
+		var lis=$("li");
+		var div=$("div");
+		var imgs=["url(img/01big.jpg)","url(img/02big.jpg)","url(img/03big.jpg)","url(img/04big.jpg)","url(img/05big.jpg)"]
+		function zhanshi(obj1,obj2,url){
+				obj1.each(function(index){
+					$(this).on("mouseover",function(){
+					obj2.css("background-image",url[index]);
+				});
+				});
+			}
+			zhanshi(lis,div,imgs);
+		
+	</script>
+</html>
